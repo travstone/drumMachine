@@ -2,6 +2,7 @@
 
 
 ## Initial Thoughts
+
 I've never implemented a drum machine in code before.
 
 As with many things that I haven't done before, my first inclination is to have a look around and see if others have posted about how they tackled the problem.
