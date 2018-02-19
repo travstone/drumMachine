@@ -1,7 +1,7 @@
 # drumMachine
 
 
-##Initial Thoughts
+## Initial Thoughts
 I've never implemented a drum machine in code before.
 
 As with many things that I haven't done before, my first inclination is to have a look around and see if others have posted about how they tackled the problem.
@@ -10,7 +10,7 @@ In the interest of showing my own thought process, I'll first sketch out my own 
 
 As an aside, I bought my first drum machine when I was about 14 or 15... a TR-505.
 
-##Conceptual
+## Conceptual
 
 There are a few main components of this:
 
@@ -42,7 +42,7 @@ The tempo and patterns must be rendered visually
 - Ideally show in each sound/step when a note fires (matching the current step of the master loop)
 
 
-##Architectural
+## Architectural
 
 - core loop: driven by setInterval()? or would setTimeout() make it easier to set the tempo on the fly? Is there a better way? I feel like the math will be clearer if we avoid Raf for the core loop (just use it for rendering)
 - core loop: call a function for each step? I think we'd want to avoid emitting an event for this (in the interest of timing accuracy)
