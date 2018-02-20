@@ -1,5 +1,9 @@
 # drumMachine
 
+## Usage Notes
+
+This implementation should play in the browser without any issue, and no server needed. That said, I've only tested in Chrome.
+
 
 ## Initial Thoughts
 
