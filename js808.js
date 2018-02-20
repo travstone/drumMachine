@@ -67,11 +67,11 @@ function JS808() {
 			// These selectors/jQuery objects could be cached
 			var $counterEl = this.$stepCounter.find('td:nth-child('+(this.currentStep+1)+')');
 			window.requestAnimationFrame(function() {
-				$counterEl.attr('style','background: green;');
+				$counterEl.addClass('activeStep');
 			});
 			window.setTimeout(function() {
 				window.requestAnimationFrame(function() {
-					$counterEl.attr('style', '');
+					$counterEl.removeClass('activeStep');
 				});
 			},this.blinkLength());
 		},

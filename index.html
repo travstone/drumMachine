@@ -5,64 +5,68 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<h1>JS 808</h1>
-	<div class="controls">
-		<button type="button" id="playPause">Play</button>
-		<button type="button" id="stop">Stop</button>
-		<label>Tempo: <input type="number" name="tempo" id="tempo"></label>
-		<label>Pattern: 
-			<select id="patternSelect">
-				<option value="pattern1">Pattern 1</option>
-				<option value="pattern2">Pattern 2</option>
-				<option value="pattern3">Pattern 3</option>
-			</select>
-		</label>
+
+	<div class="audioModule">
+		<h1>JS 808</h1>
+		<div class="controls">
+			<button type="button" id="playPause">Play</button>
+			<button type="button" id="stop">Stop</button>
+			<label>Tempo: <input type="number" name="tempo" id="tempo"></label>
+			<label>Pattern: 
+				<select id="patternSelect">
+					<option value="pattern1">Pattern 1</option>
+					<option value="pattern2">Pattern 2</option>
+					<option value="pattern3">Pattern 3</option>
+				</select>
+			</label>
+		</div>
+		<!-- 
+			It might be better to generate the following markup dynamically
+			to make it easier to tweak down the road
+		 -->
+		<div class="patternGrid" id="sounds">
+			<table>
+				<tr id="stepCounter">
+					<td>Step</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+					<td>11</td>
+					<td>12</td>
+					<td>13</td>
+					<td>14</td>
+					<td>15</td>
+					<td>16</td>
+				</tr>
+				<tr id="sound1">
+					<td contenteditable="true">Kick</td>
+				</tr>
+				<tr id="sound2">
+					<td contenteditable="true">Snare</td>
+				</tr>
+				<tr id="sound3">
+					<td contenteditable="true">Closed Hat</td>
+				</tr>
+				<tr id="sound4">
+					<td contenteditable="true">Open Hat</td>
+				</tr>
+				<tr id="sound5">
+					<td contenteditable="true">Sound 5</td>
+				</tr>
+				<tr id="sound6">
+					<td contenteditable="true">Sound 6</td>
+				</tr>
+			</table>		
+		</div>
 	</div>
-	<!-- 
-		It might be better to generate the following markup dynamically
-		to make it easier to tweak down the road
-	 -->
-	<div class="patternGrid" id="sounds">
-		<table>
-			<tr id="stepCounter">
-				<td>Step</td>
-				<td>1</td>
-				<td>2</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
-				<td>7</td>
-				<td>8</td>
-				<td>9</td>
-				<td>10</td>
-				<td>11</td>
-				<td>12</td>
-				<td>13</td>
-				<td>14</td>
-				<td>15</td>
-				<td>16</td>
-			</tr>
-			<tr id="sound1">
-				<td contenteditable="true">Kick</td>
-			</tr>
-			<tr id="sound2">
-				<td contenteditable="true">Snare</td>
-			</tr>
-			<tr id="sound3">
-				<td contenteditable="true">Closed Hat</td>
-			</tr>
-			<tr id="sound4">
-				<td contenteditable="true">Open Hat</td>
-			</tr>
-			<tr id="sound5">
-				<td contenteditable="true">Sound 5</td>
-			</tr>
-			<tr id="sound6">
-				<td contenteditable="true">Sound 6</td>
-			</tr>
-		</table>		
-	</div>
+
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js808.js"></script>
 </body>
