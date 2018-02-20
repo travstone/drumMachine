@@ -199,7 +199,6 @@ function JS808() {
 			$trEls.each(function(idx, el) {
 				var count = 0,
 					sound = $(el).attr('id');
-				console.log(idx, el, count, sound);
 				for (count; count < _self.steps; count++) {
 					$(el).append('<td><input type="checkbox" id="'+(sound + 'r' + count)+'" name="'+(sound + 'r' + count)+'"><label for="'+(sound + 'r' + count)+'"></label></td>')
 				}
@@ -223,19 +222,26 @@ function JS808() {
 				// _self.clock(true);
 			});
 			$('#playPause').on('click', function(e) {
-				var $targ = $(e.currentTarget);
+				var $targ = $(e.currentTarget),
+					$module = $('.audioModule');
 				if (_self.running) {
 					_self.stop();
-					$targ.text('Play');
+					$module.removeClass('playing');
+					$targ.html('<i class="fas fa-play-circle"></i> Play');
 				} else {
 					_self.start();
-					$targ.text('Pause');
+					$module.addClass('playing');
+					$targ.html('<i class="fas fa-pause-circle"></i> Pause');
 				}
+				$targ.blur();
 			});
 			$('#stop').on('click', function(e) {
+				var $targ = $(e.currentTarget);
 				_self.stop();
 				_self.currentStep = 1;
-				$('#playPause').text('Play');
+				$('.audioModule').removeClass('playing');
+				$('#playPause').html('<i class="fas fa-play-circle"></i> Play');
+				$targ.blur();
 			});
 			$('#patternSelect').on('change', function(e) {
 				var $targ = $(e.currentTarget),
