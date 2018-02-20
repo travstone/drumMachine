@@ -17,6 +17,7 @@ function JS808() {
 		// A number of other selectors/jQuery objects 
 		// could be cached like this
 		$stepCounter: null,
+		audio: null,
 
 		start: function() {
 			console.log('Start clock');
@@ -89,7 +90,8 @@ function JS808() {
 					$currentCel = $cels.eq(currentStepSel);
 
 				if (sound[currentStepSel]) {
-					// TODO: actually trigger the sound here; currently only highlighting the sound/step visually
+					// The underlying library checks to see if the sounds exists, so no sanity check here
+					_self.audio.playSound(idx);
 					window.requestAnimationFrame(function() {
 						$currentCel.find('label').addClass('hit');
 					});
@@ -204,7 +206,7 @@ function JS808() {
 				}
 			})
 		},
-
+			_self.audio = new AudioSystem();
 		// A lot of these selectors/jQuery objects could be cached
 		init: function() {
 			var _self = this;
