@@ -91,11 +91,11 @@ function JS808() {
 				if (sound[currentStepSel]) {
 					// TODO: actually trigger the sound here; currently only highlighting the sound/step visually
 					window.requestAnimationFrame(function() {
-						$currentCel.attr('style','background: red;');
+						$currentCel.find('label').addClass('hit');
 					});
 					window.setTimeout(function() {
 						window.requestAnimationFrame(function() {
-							$currentCel.attr('style', '');
+							$currentCel.find('label').removeClass('hit');
 						});
 					},_self.blinkLength());
 				}
@@ -191,10 +191,28 @@ function JS808() {
 			});
 		},
 
+
+		generateGrid: function() {
+			var _self = this,
+				$td = $('<td><input type="checkbox" name=""><label for=""></label></td>'),
+				$trEls = $('#sounds').find('tr').not('#stepCounter');
+			$trEls.each(function(idx, el) {
+				var count = 0,
+					sound = $(el).attr('id');
+				console.log(idx, el, count, sound);
+				for (count; count < _self.steps; count++) {
+					$(el).append('<td><input type="checkbox" id="'+(sound + 'r' + count)+'" name="'+(sound + 'r' + count)+'"><label for="'+(sound + 'r' + count)+'"></label></td>')
+				}
+			})
+		},
+
 		// A lot of these selectors/jQuery objects could be cached
 		init: function() {
 			var _self = this;
 			_self.$stepCounter = $('#stepCounter');
+
+			_self.generateGrid();
+
 			$('#tempo').val(_self.tempo).on('input change', function(e) {
 				var $targ = $(e.currentTarget),
 					val = $targ.val();
