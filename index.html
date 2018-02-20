@@ -13,16 +13,33 @@
 			min-width: 20px;
 			text-align: center;
 		}
-/*		td:not(first) {
-			text-align: left;
-		}*/
+		button {
+			min-width: 60px;
+		}
+		#tempo {
+			width: 60px;
+		}
+		#patternSelect {
+			min-width: 90px;
+		}
+		tr:not(first-child) td:first-child {
+
+		}
 	</style>
 </head>
 <body>
 	<h1>JS 808</h1>
 	<div id="controls">
 		<button type="button" id="playPause">Play</button>
+		<button type="button" id="stop">Stop</button>
 		<label>Tempo: <input type="number" name="tempo" id="tempo"></label>
+		<label>Pattern: 
+			<select id="patternSelect">
+				<option value="pattern1">Pattern 1</option>
+				<option value="pattern2">Pattern 2</option>
+				<option value="pattern3">Pattern 3</option>
+			</select>
+		</label>
 	</div>
 	<div id="sounds">
 		<table>
@@ -46,118 +63,118 @@
 				<td>16</td>
 			</tr>
 			<tr id="sound1">
-				<td>Sound 1</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td contenteditable="true">Kick</td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
 			</tr>
 			<tr id="sound2">
-				<td>Sound 2</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td contenteditable="true">Snare</td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
 			</tr>
 			<tr id="sound3">
-				<td>Sound 3</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td contenteditable="true">Closed Hat</td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
 			</tr>
 			<tr id="sound4">
-				<td>Sound 4</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td contenteditable="true">Open Hat</td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
 			</tr>
 			<tr id="sound5">
-				<td>Sound 5</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td contenteditable="true">Sound 5</td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
 			</tr>
 			<tr id="sound6">
-				<td>Sound 6</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td contenteditable="true">Sound 6</td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
+				<td><input type="checkbox" name=""></td>
 			</tr>
 		</table>		
 	</div>
