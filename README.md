@@ -2,7 +2,7 @@
 
 ## Usage Notes
 
-This implementation should play in the browser without any issue, and no server needed. That said, I've only tested in Chrome.
+This implementation requires a server (AJAX doesn't like to work via the file:// protocol). Even something simple like [Mongoose](https://cesanta.com/) should work after (possibly with a bit of config). Otherwise this should just run in the browser- for sure it works in Chrome, but possibly not in IE.
 
 
 ## Initial Thoughts

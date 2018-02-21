@@ -206,13 +206,13 @@ function JS808() {
 				}
 			})
 		},
-			_self.audio = new AudioSystem();
+
 		// A lot of these selectors/jQuery objects could be cached
 		init: function() {
 			var _self = this;
 			_self.$stepCounter = $('#stepCounter');
-
 			_self.generateGrid();
+			_self.audio = new AudioSystem();
 
 			$('#tempo').val(_self.tempo).on('input change', function(e) {
 				var $targ = $(e.currentTarget),
