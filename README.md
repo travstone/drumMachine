@@ -1,9 +1,25 @@
 # drumMachine
 
-## Usage Notes
+## Repo Branches/Usage Notes
 
-This implementation requires a server (AJAX doesn't like to work via the file:// protocol). Even something simple like [Mongoose](https://cesanta.com/) should work after (possibly with a bit of config). Otherwise this should just run in the browser- for sure it works in Chrome, but possibly not in IE.
+There are three branches to this repo:
 
+- [master](https://github.com/travstone/drumMachine): this is the initial development, accomplished in about 4 hours. This implementation should play in the browser with no server needed.
+- [visDes](https://github.com/travstone/drumMachine/tree/visDes): next, I added some basic rough styling in this branch; spent an hour or so on it. This implementation should play in the browser with no server needed.
+- [webAudio](https://github.com/travstone/drumMachine/tree/webAudio): after that, I folded in working audio; this took another hour or two. This implementation requires a server (AJAX doesn't like to work via the file:// protocol). Even something simple like [Mongoose](https://cesanta.com/) should work (possibly with a bit of config).
+
+
+For all of these branches I've only tested in Chrome, but should probably work in FF... possibly not in IE.
+
+
+## Post-development thoughts
+
+As noted below, I didn't research any of the design/architecture before starting. After finishing with the `webAudio` branch, I did go and look at other implementations of a drum machine. After reviewing these other approaches, I'd probably consider refactoring this to use the timing available in the Web Audio API (as oppsed to just setTimeout); it seems like this may offer a more precise clock.
+
+I also did not tackle the problem of how to handle patterns that differ in length from the master (e.g. an 8-step pattern looping in a 16-step sequence). To handle this, I'd be inclined to consider both my initial thought of stepping thru the pattern arrays without using the indexes, or some approach that calculates the correct index for the shorter sequence in the context of the master sequence length. I'm not sure at this point if there's a reason to favor either approach, nor am I certain that these are the only viable approaches.
+
+<hr />
+*The rest of this was written prior to getting started with any coding*
 
 ## Initial Thoughts
 
